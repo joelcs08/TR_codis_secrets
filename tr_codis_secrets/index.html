@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de missatges</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Encriptador de missatges</h1>
+        <p>Utilitza aquest encriptador per protegir els teus missatges.</p>
+    </header>
+    <main>
+        <section id="original-message">
+            <div id="systems-dropdown">
+                <button class="dropdown-button" id="encryption-system-button">Tria el sistema d'encriptació</button>
+                <div class="dropdown-content" id="dropdown-content">
+                    <button class="system-option" id="cesar-cypher-button">Cesar</button>
+                    <button class="system-option" id="vigenere-cypher-button">Vigenère</button>
+                    <button class="system-option" id="atbash-cypher-button">Atbash</button>
+                </div>
+            </div>
+            <form id="encrypt-form">
+                <label for="message">Missatge original:</label>
+                <textarea id="message" name="message" rows="4" cols="50" placeholder="Escriu el teu missatge aquí..." required></textarea>
+                <div id="key-info" class="key-info" hidden>
+                    <label for="key">Clau d'encriptació</label>
+                    <input type="number" id="key" name="key" placeholder="Introdueix la clau d'encriptació" min="0" max="26" />
+                </div>
+                <input type="submit" value="Encriptar" id="encrypt-button" />
+            </form>
+        </section>
+        <hr>
+        <section id="result">
+            <h2>Missatge encriptat:</h2>
+            <textarea id="encrypted-message" name="encrypted" rows="4" cols="50" readonly></textarea>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

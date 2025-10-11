@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid black;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+input {
+    display: block
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown-button {
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropdown-content {
+    border: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    visibility: collapse;
+    position: absolute;
+}
+
+#encrypt-form {
+    margin-top: 15px;
+}
+
+#encrypt-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
