@@ -87,7 +87,7 @@ form.addEventListener('submit', (event) => {
             break;
         
         case 'atbash':
-            result.textContent = 'Sistema Atbash no implementat encara.';
+            result.textContent = encryptAtbash(message);
             break;
         
         default:
@@ -148,4 +148,12 @@ function encryptVigenere(message, key) {
     }
 
     return encryptedMessage;
+}
+
+function encryptAtbash(message) {
+    let encryptedMessage = '';
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let codedAlphabet = alphabet.split('').reverse().join('');
+
+    return codedAlphabet;
 }
