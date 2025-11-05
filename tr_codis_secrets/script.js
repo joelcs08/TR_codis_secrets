@@ -155,5 +155,20 @@ function encryptAtbash(message) {
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
     let codedAlphabet = alphabet.split('').reverse().join('');
 
-    return codedAlphabet;
+    for (let i = 0; i < message.length; i++) {
+        const char = message[i];
+
+        if (char === char.toUpperCase()) {
+            alphabet = alphabet.toUpperCase();
+            codedAlphabet = codedAlphabet.toUpperCase();
+        } else if (char === char.toLowerCase()) {
+            alphabet = alphabet.toLowerCase();
+            codedAlphabet = codedAlphabet.toLowerCase();
+        }
+
+        const index = alphabet.indexOf(char);
+        encryptedMessage += index !== -1 ? codedAlphabet[index] : char;
+    }
+
+    return encryptedMessage;
 }
