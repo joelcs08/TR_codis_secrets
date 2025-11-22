@@ -2,12 +2,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --s: 75px; /* control the size*/
+    --c1: #2d2d2d;
+    --c2: #3c3c3c;
+    --c3: #4e4f51;
+    --c1-light: #f8f7f3;
+}
+
+body {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c2) 0 50%) 
+    calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c3) 0 120deg,var(--c2) 0 50%);
+    background-size: var(--s) calc(var(--s)*tan(30deg));
+    color: var(--c1-light);
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    margin-bottom: 10px;
 }
 
 hr {
     margin: 20px 0;
     border: none;
-    border-top: 1px solid black;
+    border-top: 1px solid black ;
 }
 
 section {
@@ -15,7 +42,6 @@ section {
     flex-direction: column;
     margin: 20px;
     padding: 10px;
-    background-color: #f0f0f0;
 }
 
 input {
@@ -27,17 +53,41 @@ label {
     margin-bottom: 5px;
 }
 
+input:not([type="submit"]), textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: var(--c3);
+    color: var(--c1-light);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.main-box {
+    background-color: var(--c2);
+    border: 1px solid #000000;
+    border-radius: 50px;
+    box-shadow: 0 0 5px 10px rgba(29, 29, 29, 0.8);
+}
+
 .dropdown-button {
     width: 100%;
     padding: 10px 20px;
-    cursor: pointer;
     font-size: 16px;
+    background-color: var(--c1);
+    color: var(--c1-light);
+    border: none;
+    border-radius: 5px;
+}
+
+.dropdown-button:hover {
+    background-color: var(--c3);
+    cursor: pointer;
 }
 
 .dropdown-content {
-    border: 1px solid #ccc;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(3, auto);
     visibility: collapse;
     position: absolute;
 }
