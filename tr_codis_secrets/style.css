@@ -63,6 +63,20 @@ input:not([type="submit"]), textarea {
     border-radius: 4px;
 }
 
+input[type="submit"] {
+    background-color: #476192;
+    color: var(--c1-light);
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--c3);
+}
+
 .main-box {
     background-color: var(--c2);
     border: 1px solid #000000;
@@ -90,6 +104,18 @@ input:not([type="submit"]), textarea {
     grid-template-columns: repeat(3, auto);
     visibility: collapse;
     position: absolute;
+}
+
+.system-option {
+    padding: 10px;
+    background-color: var(--c1);
+    border: 1px solid var(--c2);
+    color: var(--c1-light);
+    cursor: pointer;
+}
+
+.system-option:hover {
+    background-color: var(--c3);
 }
 
 #encrypt-form {
